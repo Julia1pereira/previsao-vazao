@@ -1,0 +1,15 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f8ff;
+  text-align: center;
+  color: #03396c;
+}
+
+h1 {
+  color: #005b96;
+}
+
+canvas {
+  max-width: 90%;
+  margin-top: 20px;
+}
