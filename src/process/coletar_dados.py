@@ -1,8 +1,3 @@
-# Script: coletar_dados.py
-# Descrição: baixa séries históricas da NAZA com as precipitações diárias.
-
-# acho que aqui vamos conectar no banco e puxar de cada estação e para cada estação puxar os dados da nasa
-
 import requests
 import sqlalchemy
 
