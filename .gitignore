@@ -1,2 +1,4 @@
 .venv
-data/
+data_lake/processed
+data_lake/raw
+src/process/__pycache__
