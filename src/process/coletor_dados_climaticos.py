@@ -21,8 +21,12 @@ class NasaPowerCollector:
         self.header = True
         self.time_standard = "utc"
 
-    def get_base_url(self):
+    def _get_base_url(self):
         return f'https://power.larc.nasa.gov/api/temporal/{self.interval}/point'
+    
+    def _check_date(self, date_str):
+        if not isinstance(date_str, str) and len(date_str) != 8:
+            raise ValueError("Data deve estar no formato 'YYYYMMDD'.")
 
     def get_data(self, lon, lat, start, end, **kwargs):
         """
@@ -36,15 +40,18 @@ class NasaPowerCollector:
             **kwargs: Parâmetros adicionais para a requisição.
 
         note:
-            A API NASA POWER não possui dados antes de 1981, então se a data de início for anterior, ela será ajustada para '19810101'.
-            Se a data de fim também for menor, retorna None
+            A API NASA POWER não possui dados antes de 1981.
         """
-        url = self.get_base_url()
+        url = self._get_base_url()
+
+        self._check_date(start)
+        self._check_date(end)
 
         if start < '19810101':
-            start = '19810101'
-            if end < start:
-                return None
+            raise ValueError("A data de início não pode ser anterior a 1981-01-01.")
+
+        if end <= start:
+            raise ValueError("A data de fim não pode ser anterior à data de início.")
 
         params = {
             'parameters': self.parameters,
@@ -89,3 +96,72 @@ class NasaPowerCollector:
         df = df[colunas_finais]
 
         return df
+
+
+class OpenMeteoCollector:
+    """
+    Coletor da API Open-Meteo para dados diários.
+
+    args:
+        daily_parameters (list[str]): Lista de variáveis diárias a coletar.
+    """
+
+    def __init__(self, daily_parameters=None):
+        self.daily_parameters = daily_parameters or [
+            "temperature_2m_mean",
+            "precipitation_sum",
+            "relative_humidity_2m_mean",
+        ]
+        self.timezone = "America/Sao_Paulo"
+
+    def _get_base_url(self):
+        return "https://api.open-meteo.com/v1/forecast"
+
+    def get_data(self, lon, lat, **kwargs):
+        """
+        Coleta dados climáticos diários do Open-Meteo.
+
+        args:
+            lon (float): Longitude do ponto.
+            lat (float): Latitude do ponto.
+            start (str): Data inicial no formato 'YYYYMMDD'.
+            end (str): Data final no formato 'YYYYMMDD'.
+        """
+        params = {
+            "latitude": lat,
+            "longitude": lon,
+            "daily": ",".join(self.daily_parameters),
+            "timezone": self.timezone,
+        }
+
+        params.update(kwargs)
+
+        try:
+            response = requests.get(self._get_base_url(), params=params)
+            response.raise_for_status()
+        except requests.exceptions.RequestException as e:
+            raise RuntimeError(f"Erro ao baixar os dados: {e}")
+
+        return self.create_dataframe(response.json())
+
+    def create_dataframe(self, data):
+        daily = data.get("daily")
+        if not daily or "time" not in daily:
+            raise ValueError("Resposta da API Open-Meteo inválida ou sem dados diários.")
+
+        df = pd.DataFrame(daily)
+        df["data"] = pd.to_datetime(df["time"])
+
+        coluna_map = {
+            "precipitation_sum": "precipitacao",
+            "temperature_2m_mean": "temp_media",
+            "relative_humidity_2m_mean": "umidade_relativa",
+        }
+
+        rename_dict = {coluna: coluna_map[coluna] for coluna in df.columns if coluna in coluna_map}
+        df.rename(columns=rename_dict, inplace=True)
+
+        colunas_finais = [col for col in ("precipitacao", "temp_media", "umidade_relativa") if col in df.columns]
+        colunas_finais.append("data")
+
+        return df[colunas_finais]
