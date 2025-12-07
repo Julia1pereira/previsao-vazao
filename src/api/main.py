@@ -34,10 +34,11 @@ MODELS_DIR = Path("models")
 VAZAO_COL = "vazao"
 
 def _latest_parquet(estacao: int) -> Path:
-    arquivos = sorted(PROCESSED_DIR.glob(f"dados_processados_{float(estacao)}_2025-11-27.parquet"))
-    if not arquivos:
+    padrao = PROCESSED_DIR.glob(f"dados_processados_{estacao}*.parquet")
+    try:
+        return max(padrao, key=lambda p: p.stat().st_mtime)
+    except ValueError:
         raise FileNotFoundError(f"Nenhum parquet processado encontrado para estacao {estacao}")
-    return arquivos[-1]
 
 
 def _load_dataset(estacao: int) -> pd.DataFrame:
