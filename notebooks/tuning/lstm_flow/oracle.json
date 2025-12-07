@@ -1,1 +1,277 @@
-{"ongoing_trials": {}, "hyperparameters": {"space": [{"class_name": "Boolean", "config": {"name": "use_cnn", "default": true, "conditions": []}}, {"class_name": "Int", "config": {"name": "cnn_filters", "default": null, "conditions": [], "min_value": 16, "max_value": 128, "step": 16, "sampling": "linear"}}, {"class_name": "Choice", "config": {"name": "cnn_kernel", "default": 2, "conditions": [], "values": [2, 3, 5], "ordered": true}}, {"class_name": "Int", "config": {"name": "lstm_units", "default": null, "conditions": [], "min_value": 16, "max_value": 128, "step": 16, "sampling": "linear"}}, {"class_name": "Int", "config": {"name": "num_layers", "default": null, "conditions": [], "min_value": 1, "max_value": 2, "step": 1, "sampling": "linear"}}, {"class_name": "Float", "config": {"name": "dropout", "default": 0.0, "conditions": [], "min_value": 0.0, "max_value": 0.5, "step": 0.1, "sampling": "linear"}}, {"class_name": "Int", "config": {"name": "dense_units", "default": null, "conditions": [], "min_value": 16, "max_value": 128, "step": 16, "sampling": "linear"}}, {"class_name": "Choice", "config": {"name": "learning_rate", "default": 0.0001, "conditions": [], "values": [0.0001, 0.0005, 0.001, 0.005], "ordered": true}}], "values": {"use_cnn": true, "cnn_filters": 16, "cnn_kernel": 2, "lstm_units": 16, "num_layers": 1, "dropout": 0.0, "dense_units": 16, "learning_rate": 0.0001}}, "start_order": ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19"], "end_order": ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19"], "run_times": {"00": 1, "01": 1, "02": 1, "03": 1, "04": 1, "05": 1, "06": 1, "07": 1, "08": 1, "09": 1, "10": 1, "11": 1, "12": 1, "13": 1, "14": 1, "15": 1, "16": 1, "17": 1, "18": 1, "19": 1}, "retry_queue": [], "seed": 6862, "seed_state": 7022, "tried_so_far": ["9634c1f3f1b1d1f4df43d8048f5d1145", "6f8d7cd569a2d72023f67a00e9a8ab38", "f4ba6487a00e3ff5ee1489e41f75c9da", "213aed253d81d2e2a8506ff29610e73e", "d310fe2847709e39d3c0e0fb0c9d9a59", "57e8f8870d1748894286b37fa2d6ea6a", "6a7ef46066244d32bf6766cbe5588699", "be093abc1f4510bb1ca1b363136b7dc5", "0cfc56fadb4c9679b069136bd3f73f9f", "1a4f2f1a0e805ecab2dd28a32a9886de", "ec8ccd11c5eecc5b9729523f15a792f5", "23ca71481e964069684d4cd2d5c3a931", "24b71cda7e09e0daa79993ca750f6bfd", "8c64f005c320edbc49698287ab9c5dc6", "b2479d46839b3e99fe43397f21c4ebb7", "4ebdfa2d45b6b6c494a14dab6e690ba7", "08f4cbd316f9661d0ce88e71963cca9f", "0eef16fd9e5e8d12ebce83dade12ff4c", "02472bb9f266af15a19c3ffdc3dd9e06", "4ad5c979f44699efc0f689d9f1c1d1c7"], "id_to_hash": {"00": "0cfc56fadb4c9679b069136bd3f73f9f", "01": "08f4cbd316f9661d0ce88e71963cca9f", "02": "ec8ccd11c5eecc5b9729523f15a792f5", "03": "57e8f8870d1748894286b37fa2d6ea6a", "04": "6a7ef46066244d32bf6766cbe5588699", "05": "1a4f2f1a0e805ecab2dd28a32a9886de", "06": "213aed253d81d2e2a8506ff29610e73e", "07": "9634c1f3f1b1d1f4df43d8048f5d1145", "08": "0eef16fd9e5e8d12ebce83dade12ff4c", "09": "b2479d46839b3e99fe43397f21c4ebb7", "10": "02472bb9f266af15a19c3ffdc3dd9e06", "11": "4ad5c979f44699efc0f689d9f1c1d1c7", "12": "6f8d7cd569a2d72023f67a00e9a8ab38", "13": "24b71cda7e09e0daa79993ca750f6bfd", "14": "d310fe2847709e39d3c0e0fb0c9d9a59", "15": "23ca71481e964069684d4cd2d5c3a931", "16": "f4ba6487a00e3ff5ee1489e41f75c9da", "17": "8c64f005c320edbc49698287ab9c5dc6", "18": "4ebdfa2d45b6b6c494a14dab6e690ba7", "19": "be093abc1f4510bb1ca1b363136b7dc5"}, "display": {"search_start": "2025-11-30T18:51:36.719631", "trial_start": {"00": "2025-11-30T18:51:36.719631", "01": "2025-11-30T18:52:10.041363", "02": "2025-11-30T18:52:53.041641", "03": "2025-11-30T18:54:08.631328", "04": "2025-11-30T18:54:57.542460", "05": "2025-11-30T18:55:50.163444", "06": "2025-11-30T18:57:13.238649", "07": "2025-11-30T18:57:47.813498", "08": "2025-11-30T18:58:29.049134", "09": "2025-11-30T18:59:23.174889", "10": "2025-11-30T19:01:10.585531", "11": "2025-11-30T19:01:48.230407", "12": "2025-11-30T19:02:48.531772", "13": "2025-11-30T19:05:01.536567", "14": "2025-11-30T19:05:29.726433", "15": "2025-11-30T19:06:38.370699", "16": "2025-11-30T19:09:32.172269", "17": "2025-11-30T19:09:58.378614", "18": "2025-11-30T19:10:42.886146", "19": "2025-11-30T19:11:18.229583"}, "trial_number": {"00": 1, "01": 2, "02": 3, "03": 4, "04": 5, "05": 6, "06": 7, "07": 8, "08": 9, "09": 10, "10": 11, "11": 12, "12": 13, "13": 14, "14": 15, "15": 16, "16": 17, "17": 18, "18": 19, "19": 20}}, "num_initial_points": null, "alpha": 0.0001, "beta": 2.6}
+{
+    "ongoing_trials": {},
+    "hyperparameters": {
+        "space": [
+            {
+                "class_name": "Boolean",
+                "config": {
+                    "name": "use_cnn",
+                    "default": true,
+                    "conditions": []
+                }
+            },
+            {
+                "class_name": "Int",
+                "config": {
+                    "name": "cnn_filters",
+                    "default": null,
+                    "conditions": [],
+                    "min_value": 16,
+                    "max_value": 128,
+                    "step": 16,
+                    "sampling": "linear"
+                }
+            },
+            {
+                "class_name": "Choice",
+                "config": {
+                    "name": "cnn_kernel",
+                    "default": 2,
+                    "conditions": [],
+                    "values": [
+                        2,
+                        3,
+                        5
+                    ],
+                    "ordered": true
+                }
+            },
+            {
+                "class_name": "Int",
+                "config": {
+                    "name": "lstm_units",
+                    "default": null,
+                    "conditions": [],
+                    "min_value": 16,
+                    "max_value": 128,
+                    "step": 16,
+                    "sampling": "linear"
+                }
+            },
+            {
+                "class_name": "Int",
+                "config": {
+                    "name": "num_layers",
+                    "default": null,
+                    "conditions": [],
+                    "min_value": 1,
+                    "max_value": 2,
+                    "step": 1,
+                    "sampling": "linear"
+                }
+            },
+            {
+                "class_name": "Float",
+                "config": {
+                    "name": "dropout",
+                    "default": 0.0,
+                    "conditions": [],
+                    "min_value": 0.0,
+                    "max_value": 0.5,
+                    "step": 0.1,
+                    "sampling": "linear"
+                }
+            },
+            {
+                "class_name": "Int",
+                "config": {
+                    "name": "dense_units",
+                    "default": null,
+                    "conditions": [],
+                    "min_value": 16,
+                    "max_value": 128,
+                    "step": 16,
+                    "sampling": "linear"
+                }
+            },
+            {
+                "class_name": "Choice",
+                "config": {
+                    "name": "learning_rate",
+                    "default": 0.0001,
+                    "conditions": [],
+                    "values": [
+                        0.0001,
+                        0.0005,
+                        0.001,
+                        0.005
+                    ],
+                    "ordered": true
+                }
+            }
+        ],
+        "values": {
+            "use_cnn": true,
+            "cnn_filters": 16,
+            "cnn_kernel": 2,
+            "lstm_units": 16,
+            "num_layers": 1,
+            "dropout": 0.0,
+            "dense_units": 16,
+            "learning_rate": 0.0001
+        }
+    },
+    "start_order": [
+        "00",
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19"
+    ],
+    "end_order": [
+        "00",
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19"
+    ],
+    "run_times": {
+        "00": 1,
+        "01": 1,
+        "02": 1,
+        "03": 1,
+        "04": 1,
+        "05": 1,
+        "06": 1,
+        "07": 1,
+        "08": 1,
+        "09": 1,
+        "10": 1,
+        "11": 1,
+        "12": 1,
+        "13": 1,
+        "14": 1,
+        "15": 1,
+        "16": 1,
+        "17": 1,
+        "18": 1,
+        "19": 1
+    },
+    "retry_queue": [],
+    "seed": 6862,
+    "seed_state": 7022,
+    "tried_so_far": [
+        "9634c1f3f1b1d1f4df43d8048f5d1145",
+        "6f8d7cd569a2d72023f67a00e9a8ab38",
+        "f4ba6487a00e3ff5ee1489e41f75c9da",
+        "213aed253d81d2e2a8506ff29610e73e",
+        "d310fe2847709e39d3c0e0fb0c9d9a59",
+        "57e8f8870d1748894286b37fa2d6ea6a",
+        "6a7ef46066244d32bf6766cbe5588699",
+        "be093abc1f4510bb1ca1b363136b7dc5",
+        "0cfc56fadb4c9679b069136bd3f73f9f",
+        "1a4f2f1a0e805ecab2dd28a32a9886de",
+        "ec8ccd11c5eecc5b9729523f15a792f5",
+        "23ca71481e964069684d4cd2d5c3a931",
+        "24b71cda7e09e0daa79993ca750f6bfd",
+        "8c64f005c320edbc49698287ab9c5dc6",
+        "b2479d46839b3e99fe43397f21c4ebb7",
+        "4ebdfa2d45b6b6c494a14dab6e690ba7",
+        "08f4cbd316f9661d0ce88e71963cca9f",
+        "0eef16fd9e5e8d12ebce83dade12ff4c",
+        "02472bb9f266af15a19c3ffdc3dd9e06",
+        "4ad5c979f44699efc0f689d9f1c1d1c7"
+    ],
+    "id_to_hash": {
+        "00": "0cfc56fadb4c9679b069136bd3f73f9f",
+        "01": "08f4cbd316f9661d0ce88e71963cca9f",
+        "02": "ec8ccd11c5eecc5b9729523f15a792f5",
+        "03": "57e8f8870d1748894286b37fa2d6ea6a",
+        "04": "6a7ef46066244d32bf6766cbe5588699",
+        "05": "1a4f2f1a0e805ecab2dd28a32a9886de",
+        "06": "213aed253d81d2e2a8506ff29610e73e",
+        "07": "9634c1f3f1b1d1f4df43d8048f5d1145",
+        "08": "0eef16fd9e5e8d12ebce83dade12ff4c",
+        "09": "b2479d46839b3e99fe43397f21c4ebb7",
+        "10": "02472bb9f266af15a19c3ffdc3dd9e06",
+        "11": "4ad5c979f44699efc0f689d9f1c1d1c7",
+        "12": "6f8d7cd569a2d72023f67a00e9a8ab38",
+        "13": "24b71cda7e09e0daa79993ca750f6bfd",
+        "14": "d310fe2847709e39d3c0e0fb0c9d9a59",
+        "15": "23ca71481e964069684d4cd2d5c3a931",
+        "16": "f4ba6487a00e3ff5ee1489e41f75c9da",
+        "17": "8c64f005c320edbc49698287ab9c5dc6",
+        "18": "4ebdfa2d45b6b6c494a14dab6e690ba7",
+        "19": "be093abc1f4510bb1ca1b363136b7dc5"
+    },
+    "display": {
+        "search_start": "2025-11-30T18:51:36.719631",
+        "trial_start": {
+            "00": "2025-11-30T18:51:36.719631",
+            "01": "2025-11-30T18:52:10.041363",
+            "02": "2025-11-30T18:52:53.041641",
+            "03": "2025-11-30T18:54:08.631328",
+            "04": "2025-11-30T18:54:57.542460",
+            "05": "2025-11-30T18:55:50.163444",
+            "06": "2025-11-30T18:57:13.238649",
+            "07": "2025-11-30T18:57:47.813498",
+            "08": "2025-11-30T18:58:29.049134",
+            "09": "2025-11-30T18:59:23.174889",
+            "10": "2025-11-30T19:01:10.585531",
+            "11": "2025-11-30T19:01:48.230407",
+            "12": "2025-11-30T19:02:48.531772",
+            "13": "2025-11-30T19:05:01.536567",
+            "14": "2025-11-30T19:05:29.726433",
+            "15": "2025-11-30T19:06:38.370699",
+            "16": "2025-11-30T19:09:32.172269",
+            "17": "2025-11-30T19:09:58.378614",
+            "18": "2025-11-30T19:10:42.886146",
+            "19": "2025-11-30T19:11:18.229583"
+        },
+        "trial_number": {
+            "00": 1,
+            "01": 2,
+            "02": 3,
+            "03": 4,
+            "04": 5,
+            "05": 6,
+            "06": 7,
+            "07": 8,
+            "08": 9,
+            "09": 10,
+            "10": 11,
+            "11": 12,
+            "12": 13,
+            "13": 14,
+            "14": 15,
+            "15": 16,
+            "16": 17,
+            "17": 18,
+            "18": 19,
+            "19": 20
+        }
+    },
+    "num_initial_points": null,
+    "alpha": 0.0001,
+    "beta": 2.6
+}

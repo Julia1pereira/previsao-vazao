@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 import logging
 import shutil
 from pathlib import Path
@@ -48,12 +49,18 @@ def _build_collectors() -> Tuple[EstacaoDataCollector, NasaPowerCollector, OpenM
     Instancia coletores de vazão (PostgreSQL), clima histórico (NASA POWER) e previsão
     (Open-Meteo) com os parâmetros padrão esperados pelo pipeline.
     """
+    db_user = os.getenv("DB_USER", "postgres")
+    db_password = os.getenv("DB_PASSWORD", "admin")
+    db_host = os.getenv("DB_HOST", "localhost")
+    db_port = int(os.getenv("DB_PORT", "5432"))
+    db_name = os.getenv("DB_NAME", "banco_vazao")
+
     banco_vazao = EstacaoDataCollector(
-        user="postgres",
-        password="admin",
-        host="localhost",
-        port=5432,
-        database="banco_vazao",
+        user=db_user,
+        password=db_password,
+        host=db_host,
+        port=db_port,
+        database=db_name,
     )
 
     nasa_collector = NasaPowerCollector(

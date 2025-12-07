@@ -11,6 +11,7 @@ import math
 from datetime import date
 from pathlib import Path
 from typing import Dict, List, Optional
+import os
 
 import numpy as np
 import pandas as pd
@@ -178,4 +179,5 @@ def get_estacao_prediction(payload: PrevisaoRequest):
         raise HTTPException(status_code=500, detail=str(e))
     
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    port = int(os.getenv("PORT", "8081"))
+    uvicorn.run(app, host="0.0.0.0", port=port)
